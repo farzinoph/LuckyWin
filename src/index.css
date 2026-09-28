@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn Variable", system-ui, sans-serif;
+
+  --color-navy-950: #0b1a4a;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-ice: #bfdbfe;
+}
+
+body {
+  background-color: var(--color-navy-950);
+  color: white;
+  font-family: var(--font-sans);
+}
+
+/* --- جایزه‌های شناور پس‌زمینه --- */
+@keyframes prize-rise {
+  0%   { transform: translate3d(0, 115vh, 0) rotate(var(--r0)); opacity: 0; }
+  12%  { opacity: var(--o); }
+  88%  { opacity: var(--o); }
+  100% { transform: translate3d(0, -30vh, 0) rotate(var(--r1)); opacity: 0; }
+}
+
+@keyframes prize-sway {
+  0%, 100% { transform: translateX(calc(var(--sway) * -1)); }
+  50%      { transform: translateX(var(--sway)); }
+}
+
+.prize-rise {
+  position: absolute;
+  bottom: 0;
+  animation: prize-rise var(--d) linear infinite;
+  animation-delay: var(--delay);
+  will-change: transform, opacity;
+}
+
+.prize-sway {
+  display: block;
+  animation: prize-sway var(--sd) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prize-rise, .prize-sway { animation: none; opacity: 0.15; }
+}
+
+/* --- چرخ (با CSS و روی GPU) --- */
+@keyframes wheel-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes wheel-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.12); }
+}
+
+.wheel-spin {
+  animation: wheel-spin var(--spin, 14s) linear infinite;
+  will-change: transform;
+}
+.wheel-pulse {
+  animation: wheel-pulse 1.6s ease-in-out infinite;
+}
