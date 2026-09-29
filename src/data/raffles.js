@@ -1,0 +1,43 @@
+export const raffles = [
+  {
+    id: 'airpods',
+    title: 'ایرپاد پرو',
+    emoji: '🎧',
+    desc: 'یک نفر برنده می‌شه. بلیطت رو بگیر و منتظر لایو باش.',
+    price: '۵۰,۰۰۰ تومان',
+    capacity: 10,
+    joined: 6,
+    liveAt: 'جمعه ساعت ۲۱:۰۰',
+    liveUrl: 'https://instagram.com/',
+    winner: null,
+    status: 'open',
+  },
+  {
+    id: 'powerbank',
+    title: 'پاوربانک ۲۰۰۰۰',
+    emoji: '🔋',
+    desc: 'شارژر همراه با شارژ سریع. یک نفر برنده می‌شه.',
+    price: '۳۰,۰۰۰ تومان',
+    capacity: 10,
+    joined: 10,
+    liveAt: 'شنبه ساعت ۲۰:۰۰',
+    liveUrl: 'https://instagram.com/',
+    winner: null,
+    status: 'full',
+  },
+  {
+    id: 'smartwatch',
+    title: 'ساعت هوشمند',
+    emoji: '⌚',
+    desc: 'ساعت هوشمند با نمایشگر امولد. یک نفر برنده می‌شه.',
+    price: '۴۰,۰۰۰ تومان',
+    capacity: 10,
+    joined: 10,
+    liveAt: 'برگزار شد',
+    liveUrl: 'https://instagram.com/',
+    winner: 'سارا محمدی',
+    status: 'done',
+  },
+]
+
+export const getRaffle = (id) => raffles.find((r) => r.id === id)

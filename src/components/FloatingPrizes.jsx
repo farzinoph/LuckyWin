@@ -14,7 +14,7 @@ export default function FloatingPrizes() {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 z-0 overflow-hidden pointer-events-none select-none"
+      className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none"
     >
       {prizes.map((p, i) => (
         <div

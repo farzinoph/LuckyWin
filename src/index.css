@@ -17,7 +17,6 @@ body {
   font-family: var(--font-sans);
 }
 
-/* --- جایزه‌های شناور پس‌زمینه --- */
 @keyframes prize-rise {
   0%   { transform: translate3d(0, 115vh, 0) rotate(var(--r0)); opacity: 0; }
   12%  { opacity: var(--o); }
@@ -48,7 +47,6 @@ body {
   .prize-rise, .prize-sway { animation: none; opacity: 0.15; }
 }
 
-/* --- چرخ (با CSS و روی GPU) --- */
 @keyframes wheel-spin {
   to { transform: rotate(360deg); }
 }
